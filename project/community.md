@@ -5,16 +5,16 @@
     grammar or spelling mistakes.
 -->
 
-Pterodactyl has grown from a community of tens in 2015 to a community of thousands in 2020. During that time
+Shadowdactyl has grown from a community of tens in 2015 to a community of thousands in 2020. During that time
 there have been countless growing pains and community has changed in an innumerable number of ways. At our heart
-however, Pterodactyl continues to exist for one purpose: to be _the_ platform for running your game servers.
+however, Shadowdactyl continues to exist for one purpose: to be _the_ platform for running your game servers.
 
 In order to keep true to that goal, and continue to foster one of the largest open-source game panel communities
 out there, we've adopted a simple set of guidelines for participating in this community. The goal of these guidelines
 is to foster an inclusive, welcoming environment for new users, and provide a space for the thousands of existing
 users, administrators, network owners, and hosting companies to co-exist.
 
-These rules and guidelines extend to all facets of the Pterodactyl Community, including but not limited to our
+These rules and guidelines extend to all facets of the Shadowdactyl Community, including but not limited to our
 Discord Server and all activities within the GitHub Organization.
 
 ## Community Guidelines

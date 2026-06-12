@@ -1,6 +1,6 @@
 # CentOS 7
 
-This guide provides comprehensive instructions for installing Pterodactyl v1.X on CentOS 7, including all dependencies and SSL configuration.
+This guide provides comprehensive instructions for installing Shadowdactyl v1.X on CentOS 7, including all dependencies and SSL configuration.
 
 [[toc]]
 
@@ -61,15 +61,15 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 
 ### PHP Configuration
 
-Create a new PHP-FPM configuration file in /etc/php-fpm.d/www-pterodactyl.conf:
+Create a new PHP-FPM configuration file in /etc/php-fpm.d/www-shadowdactyl.conf:
 
 ```conf
-[pterodactyl]
+[shadowdactyl]
 
 user = nginx
 group = nginx
 
-listen = /var/run/php-fpm/pterodactyl.sock
+listen = /var/run/php-fpm/shadowdactyl.sock
 listen.owner = nginx
 listen.group = nginx
 listen.mode = 0750
@@ -100,5 +100,5 @@ setsebool -P httpd_unified 1
 Excellent, we now have all of the required dependencies installed and configured. From here, follow the [official Panel installation documentation](/panel/1.0/getting_started.md#download-files).
 
 ::: tip
-You will need to change the fastcgi_pass path in the Nginx configuration to `/var/run/php-fpm/pterodactyl.sock`
+You will need to change the fastcgi_pass path in the Nginx configuration to `/var/run/php-fpm/shadowdactyl.sock`
 :::

@@ -10,7 +10,7 @@ This documentation is for **abandoned software** which does not recieve any secu
 from the community. This documentation has been left accessible for historial reasons.
 
 You should be installing and using [Wings](/wings/1.0/installing.md) in production environments with
-[Pterodactyl Panel 1.0](/panel/1.0/getting_started.md).
+[Shadowdactyl Panel 1.0](/panel/1.0/getting_started.md).
 :::
 
 [[toc]]
@@ -55,15 +55,15 @@ out into a normal JSON object.
 Please note that all of the settings above are in the `internals.throttle.X` path. So, `enabled` is actually `internals.throttle.enabled`.
 
 ## Custom Network Interfaces
-If for whatever reason you need to modify the network interfaces used for Pterodactyl's local Docker network you
+If for whatever reason you need to modify the network interfaces used for Shadowdactyl's local Docker network you
 can do so by modifying the `core.json` file for the daemon. In most cases you'll just be modifying the network
 name to allow your servers to use the host network stack. To do so, just change `docker.network.name` to be `host`
-rather than `pterodactyl_nw` as shown below.
+rather than `shadowdactyl_nw` as shown below.
 
 ::: warning
-While changing to the host network stack does allow servers running on Pterodactyl to have direct access to local
+While changing to the host network stack does allow servers running on Shadowdactyl to have direct access to local
 interfaces and bind to specific IP addresses (required for some Steam games), it is not recommended on public
-installations of Pterodactyl (where you have other users running servers).
+installations of Shadowdactyl (where you have other users running servers).
 
 Using the `host` stack removes many network specific protections afforded by Docker, and will allow server processes
 to access anything on the host, as well as bind to any IP or Port they wish.
@@ -73,7 +73,7 @@ to access anything on the host, as well as bind to any IP or Port they wish.
 Any changes to the network after the daemon has been started will require you to remove the docker network and restart the daemon. Any servers on the host need to be stopped before and most likely rebuilt.
 
 The following will stop the daemon, remove the network, and start the daemon again. Run at your own risk.  
-`systemctl stop wings && docker network rm pterodactyl_nw && systemctl start wings`
+`systemctl stop wings && docker network rm shadowdactyl_nw && systemctl start wings`
 :::
 
 ``` json{5}
@@ -81,7 +81,7 @@ The following will stop the daemon, remove the network, and start the daemon aga
     "socket": "/var/run/docker.sock",
     "autoupdate_images": true,
     "network": {
-      "name": "pterodactyl_nw",
+      "name": "shadowdactyl_nw",
       "interfaces": {
         "v4": {
           "subnet": "172.18.0.0/16",
@@ -113,10 +113,10 @@ a private instance and are willing to decrease some of the security measures.
 
 | Setting Path           | Default Value | Notes                                                                                                                                                                                                                                                                             |
 | ---------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ipv6`                 | true          | Set this to false to disable IPv6 networking on the pterodactyl0 interface.                                                                                                                                                                                                       |
-| `internal`             | false         | Set this to true to prevent any external network access to all containers on the pterodactyl0 interface.                                                                                                                                                                          |
+| `ipv6`                 | true          | Set this to false to disable IPv6 networking on the shadowdactyl0 interface.                                                                                                                                                                                                       |
+| `internal`             | false         | Set this to true to prevent any external network access to all containers on the shadowdactyl0 interface.                                                                                                                                                                          |
 | `enable_icc`           | true          | Set this to false to disallow containers to access services running on the host system's non-public IP addresses. Setting this to false does make it impossible to connect (from a container) to MySQL/Redis/etc. running on the host system without using the public IP address. |
-| `enable_ip_masquerade` | true          | Set this to false to disable IP Masquerading on the pterodactyl0 interface.                                                                                                                                                                                                       |
+| `enable_ip_masquerade` | true          | Set this to false to disable IP Masquerading on the shadowdactyl0 interface.                                                                                                                                                                                                       |
 
 Please note that all of the settings above are in the `docker.policy.network.X` path. So, `ipv6` is actually `docker.policy.network.ipv6`.
 

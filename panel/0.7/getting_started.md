@@ -9,10 +9,10 @@ meta:
 This documentation is for **end-of-life software** which does not recieve any security updates or support
 from the community. This documentation has been left accessible for historial reasons.
 
-You should be installing and using [Pterodactyl Panel 1.0](/panel/1.0/getting_started.md) in production environments.
+You should be installing and using [Shadowdactyl Panel 1.0](/panel/1.0/getting_started.md) in production environments.
 :::
 
-Pterodactyl Panel is designed to run on your own web server. You will need to have root access to your server in order
+Shadowdactyl Panel is designed to run on your own web server. You will need to have root access to your server in order
 to run and use this panel.
 
 This panel does not exist as a drag-and-drop service to run your servers. It is a highly complex system
@@ -23,10 +23,10 @@ around now.
 [[toc]]
 
 ## Picking a Server OS
-Pterodactyl runs on a wide range of operating systems, so pick whichever you are most comfortable using.
+Shadowdactyl runs on a wide range of operating systems, so pick whichever you are most comfortable using.
 
 ::: warning
-Pterodactyl does not support most OpenVZ systems due to incompatabilities with Docker. If you are planning on running
+Shadowdactyl does not support most OpenVZ systems due to incompatabilities with Docker. If you are planning on running
 this software on an OpenVZ based system you will &mdash; most likely &mdash; not be successful.
 :::
 
@@ -86,8 +86,8 @@ The first step in this process is to create the folder where the panel will live
 newly created folder. Below is an example of how to perform this operation.
 
 ``` bash
-mkdir -p /var/www/pterodactyl
-cd /var/www/pterodactyl
+mkdir -p /var/www/shadowdactyl
+cd /var/www/shadowdactyl
 ```
 
 Once you have created a new directory for the Panel and moved into it you'll need to download the Panel files. This
@@ -96,7 +96,7 @@ and then set the correct permissions on the `storage/` and `bootstrap/cache/` di
 allow us to store files as well as keep a speedy cache available to reduce load times.
 
 ``` bash
-curl -Lo panel.tar.gz https://github.com/pterodactyl/panel/releases/download/v0.7.19/panel.tar.gz
+curl -Lo panel.tar.gz https://github.com/shadowdactyl/panel/releases/download/v0.7.19/panel.tar.gz
 tar --strip-components=1 -xzvf panel.tar.gz
 chmod -R 755 storage/* bootstrap/cache/
 ```
@@ -106,20 +106,20 @@ chmod -R 755 storage/* bootstrap/cache/
 This documentation is for **end-of-life software** which does not recieve any security updates or support
 from the community. This documentation has been left accessible for historial reasons.
 
-You should be installing and using [Pterodactyl Panel 1.0](/panel/1.0/getting_started.md) in production environments.
+You should be installing and using [Shadowdactyl Panel 1.0](/panel/1.0/getting_started.md) in production environments.
 :::
 
 Now that all of the files have been downloaded we need to configure some core aspects of the Panel.
 
 ::: tip Database Configuration
 You will need a database setup and a user with the correct permissions created for that database before
-continuing any further. See below to quickly create a user and database for your Pterodactyl panel, if you are unsure how to do this or want more information, please have a look at [Setting up MySQL](/tutorials/mysql_setup.html).
+continuing any further. See below to quickly create a user and database for your Shadowdactyl panel, if you are unsure how to do this or want more information, please have a look at [Setting up MySQL](/tutorials/mysql_setup.html).
 ```
 $ mysql -u root -p
 
-mysql> CREATE USER 'pterodactyl'@'localhost' IDENTIFIED WITH mysql_native_password BY 'A secure password';
+mysql> CREATE USER 'shadowdactyl'@'localhost' IDENTIFIED WITH mysql_native_password BY 'A secure password';
 mysql> CREATE DATABASE panel;
-mysql> GRANT ALL ON panel.* TO 'pterodactyl'@'localhost' WITH GRANT OPTION;
+mysql> GRANT ALL ON panel.* TO 'shadowdactyl'@'localhost' WITH GRANT OPTION;
 
 ```
 :::
@@ -132,7 +132,7 @@ cp .env.example .env
 composer install --no-dev --optimize-autoloader
 
 # Only run the command below if you are installing this Panel for
-# the first time and do not have any Pterodactyl Panel data in the database.
+# the first time and do not have any Shadowdactyl Panel data in the database.
 php artisan key:generate --force
 ```
 
@@ -142,7 +142,7 @@ Store it somewhere safe - not just on your server. If you lose it, all encrypted
 :::
 
 ### Environment Configuration
-Pterodactyl's core environment is easily configured using a few different CLI commands built into the app. This step
+Shadowdactyl's core environment is easily configured using a few different CLI commands built into the app. This step
 will cover setting up things such as sessions, caching, database credentials, and email sending.
 
 ``` bash
@@ -157,7 +157,7 @@ php artisan p:environment:mail
 ### Database Setup
 Now we need to setup all of the base data for the Panel in the database you created earlier. **The command below
 may take some time to run depending on your machine. Please _DO NOT_ exit the process until it is completed!** This
-command will setup the database tables and then add all of the Nests & Eggs that power Pterodactyl.
+command will setup the database tables and then add all of the Nests & Eggs that power Shadowdactyl.
 
 ``` bash
 php artisan migrate --seed
@@ -191,25 +191,25 @@ We make use of queues to make the application faster and handle sending emails a
 You will need to setup the queue worker for these actions to be processed.
 
 ### Crontab Configuration
-The first thing we need to do is create a new cronjob that runs every minute to process specific Pterodactyl tasks, such
+The first thing we need to do is create a new cronjob that runs every minute to process specific Shadowdactyl tasks, such
 as session cleanup and sending scheduled tasks to daemons. You'll want to open your crontab using `sudo crontab -e` and
 then paste the line below.
 
 ```bash
-* * * * * php /var/www/pterodactyl/artisan schedule:run >> /dev/null 2>&1
+* * * * * php /var/www/shadowdactyl/artisan schedule:run >> /dev/null 2>&1
 ```
 
 ### Create Queue Worker
 Next you need to create a new systemd worker to keep our queue process running in the background. This queue is responsible
-for sending emails and handling many other background tasks for Pterodactyl.
+for sending emails and handling many other background tasks for Shadowdactyl.
 
 Create a file called `pteroq.service` in `/etc/systemd/system` with the contents below.
 ``` text
-# Pterodactyl Queue Worker File
+# Shadowdactyl Queue Worker File
 # ----------------------------------
 
 [Unit]
-Description=Pterodactyl Queue Worker
+Description=Shadowdactyl Queue Worker
 After=redis-server.service
 
 [Service]
@@ -218,7 +218,7 @@ After=redis-server.service
 User=www-data
 Group=www-data
 Restart=always
-ExecStart=/usr/bin/php /var/www/pterodactyl/artisan queue:work --queue=high,standard,low --sleep=3 --tries=3
+ExecStart=/usr/bin/php /var/www/shadowdactyl/artisan queue:work --queue=high,standard,low --sleep=3 --tries=3
 
 [Install]
 WantedBy=multi-user.target

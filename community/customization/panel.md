@@ -4,7 +4,7 @@
 Do **not** run the following steps on your production nodes.
 :::
 
-Instructions on how to build the panel are also available in the [BUILDING.md](https://github.com/pterodactyl/panel/blob/1.0-develop/BUILDING.md) file.
+Instructions on how to build the panel are also available in the [BUILDING.md](https://github.com/shadowdactyl/panel/blob/1.0-develop/BUILDING.md) file.
 
 The frontend of the Panel is built with React. Any changes to the source files require to recompile it.
 This also applies to style sheets. The following sections explain how to do so.
@@ -31,7 +31,7 @@ Install required javascript packages.
 ```bash
 npm i -g yarn # Install Yarn
 
-cd /var/www/pterodactyl
+cd /var/www/shadowdactyl
 yarn # Installs panel build dependencies
 ```
 
@@ -40,7 +40,7 @@ yarn # Installs panel build dependencies
 The following command will rebuild the Panel frontend. For NodeJS version 17 and above, you must enable the `--openssl-legacy-provider` option before building.
 
 ```bash
-cd /var/www/pterodactyl
+cd /var/www/shadowdactyl
 export NODE_OPTIONS=--openssl-legacy-provider # for NodeJS v17+
 yarn build:production # Build panel
 ```

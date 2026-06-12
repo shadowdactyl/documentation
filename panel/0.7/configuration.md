@@ -7,8 +7,8 @@ meta:
 
 [[toc]]
 
-Pterodactyl's environment settings are configured and stored in an environment file — `.env` — located in the
-installation root directory — generally `/var/www/pterodactyl`. Some of these settings are also stored in the database
+Shadowdactyl's environment settings are configured and stored in an environment file — `.env` — located in the
+installation root directory — generally `/var/www/shadowdactyl`. Some of these settings are also stored in the database
 and will override settings found in the environment file.
 
 To change this behavior you can edit the `.env` file and change the setting `APP_ENVIRONMENT_ONLY=false` to
@@ -16,7 +16,7 @@ To change this behavior you can edit the `.env` file and change the setting `APP
 only need to do this if you severly corrupt a setting in the Panel or are deep in development with the software.
 
 ## Reporting All Exceptions
-By default Pterodactyl only logs and reports exceptions that are, well, exceptional by nature. There are some exceptions
+By default Shadowdactyl only logs and reports exceptions that are, well, exceptional by nature. There are some exceptions
 that we expect to occur such as authentication failures or validation issues. However, in rare instances when developing,
 or even on production servers, you might need to have all exceptions logged to detect inconsistent behavior.
 
@@ -24,19 +24,19 @@ To do this, simply set `APP_REPORT_ALL_EXCEPTIONS=true` in your `.env` file. You
 completed whatever it is you're needing the exceptions for, otherwise your logs will become very large, very quickly.
 
 ## Client Databases
-By default Pterodactyl ships with the ability for clients to have their own per-server databases. If you wish to disable
-this ability, set `PTERODACTYL_CLIENT_DATABASES_ENABLED` to be `false`. Pterodactyl also attempts to create databases
+By default Shadowdactyl ships with the ability for clients to have their own per-server databases. If you wish to disable
+this ability, set `SHADOWDACTYL_CLIENT_DATABASES_ENABLED` to be `false`. Shadowdactyl also attempts to create databases
 on a database host assigned to the current server's node but will use any host if one can't be found. If you would like
-to force a database to be created only on a host belonging to that server's node, set `PTERODACTYL_CLIENT_DATABASES_ALLOW_RANDOM`
+to force a database to be created only on a host belonging to that server's node, set `SHADOWDACTYL_CLIENT_DATABASES_ALLOW_RANDOM`
 to be `false`.
 
 ```
-PTERODACTYL_CLIENT_DATABASES_ENABLED=true
-PTERODACTYL_CLIENT_DATABASES_ALLOW_RANDOM=true
+SHADOWDACTYL_CLIENT_DATABASES_ENABLED=true
+SHADOWDACTYL_CLIENT_DATABASES_ALLOW_RANDOM=true
 ```
 
 ## Reverse Proxy Setup
-If you are planning on running Pterodactyl behind a reverse proxy, either using NGINX or because you are using
+If you are planning on running Shadowdactyl behind a reverse proxy, either using NGINX or because you are using
 [Cloudflare's Flexible SSL](https://support.cloudflare.com/hc/en-us/articles/200170416-What-do-the-SSL-options-mean-),
 you will need to make a quick modification to the Panel to ensure things continue to work as expected. By default when
 you are using these reverse proxies your Panel will not understand how to properly handle requests and you'll most likely
@@ -50,7 +50,7 @@ if your proxy is running on the same machine as the server, chances are that som
 will work for you.
 
 ### NGINX Specific Configuration
-For Pterodactyl to properly respond to an NGINX reverse proxy, the NGINX `location` config must contain the following lines:
+For Shadowdactyl to properly respond to an NGINX reverse proxy, the NGINX `location` config must contain the following lines:
 ```
 proxy_set_header X-Real-IP $remote_addr;
 proxy_set_header Host $host;
@@ -75,7 +75,7 @@ some users find it too restrictive and wish to increase the size. This is contro
 also be set using the `.env` file. The default value is `50,000` bytes but this can be increased as you see fit.
 
 ```
-PTERODACTYL_FILES_MAX_EDIT_SIZE=50000
+SHADOWDACTYL_FILES_MAX_EDIT_SIZE=50000
 ```
 
 ## Disable or Modify ReCaptcha
@@ -83,14 +83,14 @@ To disable reCAPTCHA on login or password reset, simply set `RECAPTCHA_ENABLED=f
 change will take effect immediately.
 
 ### Using Your Own Keys
-Pterodactyl comes preconfigured using a public set of reCAPTCHA keys but you may wish to use your own site
+Shadowdactyl comes preconfigured using a public set of reCAPTCHA keys but you may wish to use your own site
 specific keys. To do so, follow the instructions below.
 
 1. Visit [Google's reCAPTCHA Admin Console](https://www.google.com/recaptcha/admin#list).
 2. Click "Register New Site" and fill in a name for your keys.
 3. Choose `reCAPTCHA v2` and ensure that the option for `Invisible` is selected.
 4. Include the domain that your panel is located on.
-5. On the next page displayed, locate the "Site Key" and "Secret Key". In Pterodactyl's control panel click on "Settings" and then the "Advanced" tab. Enter the keys in the boxes "Site Key" and "Secret Key", respectively.
+5. On the next page displayed, locate the "Site Key" and "Secret Key". In Shadowdactyl's control panel click on "Settings" and then the "Advanced" tab. Enter the keys in the boxes "Site Key" and "Secret Key", respectively.
 
 ::: warning Disabling Domain Verification
 If you do not want reCAPTCHA to verify the domain making the validation request you can uncheck "Verify the origin of reCaptcha solution" under "Advanced Settings" after generating your key.

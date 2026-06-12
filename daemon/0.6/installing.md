@@ -10,11 +10,11 @@ This documentation is for **abandoned software** which does not recieve any secu
 from the community. This documentation has been left accessible for historial reasons.
 
 You should be installing and using [Wings](/wings/1.0/installing.md) in production environments with
-[Pterodactyl Panel 1.0](/panel/1.0/getting_started.md).
+[Shadowdactyl Panel 1.0](/panel/1.0/getting_started.md).
 :::
 
 ::: warning
-This specific software is for Pterodactyl v0.7 and **must not be used for Pterodactyl v1.0**. If you have installed 1.0 you should use [Wings](/wings/1.0/installing.html) instead.
+This specific software is for Shadowdactyl v0.7 and **must not be used for Shadowdactyl v1.0**. If you have installed 1.0 you should use [Wings](/wings/1.0/installing.html) instead.
 :::
 
 [[toc]]
@@ -56,7 +56,7 @@ VMware, Inc.
 ```
 
 ## Dependencies
-Pterodactyl's Daemon requires the following dependencies be installed on your system in order for it to operate.
+Shadowdactyl's Daemon requires the following dependencies be installed on your system in order for it to operate.
 
 * Docker
 * Nodejs (`v10`, `v12`, higher versions likely work, but are untested)
@@ -127,7 +127,7 @@ This documentation is for **abandoned software** which does not recieve any secu
 from the community. This documentation has been left accessible for historial reasons.
 
 You should be installing and using [Wings](/wings/1.0/installing.md) in production environments with
-[Pterodactyl Panel 1.0](/panel/1.0/getting_started.md).
+[Shadowdactyl Panel 1.0](/panel/1.0/getting_started.md).
 :::
 The first step for installing the daemon is to make sure we have the required directory structure setup. To do so,
 run the commands below.
@@ -145,7 +145,7 @@ set when creating the node.
 
 The next step is to download the software and unpack the archive.
 ``` bash
-curl -L https://github.com/pterodactyl/daemon/releases/download/v0.6.13/daemon.tar.gz | tar --strip-components=1 -xzv
+curl -L https://github.com/shadowdactyl/daemon/releases/download/v0.6.13/daemon.tar.gz | tar --strip-components=1 -xzv
 ```
 
 Finally, we need to install the dependencies that allow the Daemon to run properly. This command will most likely
@@ -175,12 +175,12 @@ sudo npm start
 
 ### Daemonizing (using systemd)
 
-Running Pterodactyl Daemon in the background is a simple task, just make sure that it runs without errors before doing
+Running Shadowdactyl Daemon in the background is a simple task, just make sure that it runs without errors before doing
 this. Place the contents below in a file called `wings.service` in the `/etc/systemd/system` directory.
 
 ``` text
 [Unit]
-Description=Pterodactyl Wings Daemon
+Description=Shadowdactyl Wings Daemon
 After=docker.service
 
 [Service]

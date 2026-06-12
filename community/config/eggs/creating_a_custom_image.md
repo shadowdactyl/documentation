@@ -3,7 +3,7 @@
 [[toc]]
 
 ::: warning
-This tutorial uses examples from our [`core:java`](https://github.com/pterodactyl/images/tree/java) docker image,
+This tutorial uses examples from our [`core:java`](https://github.com/shadowdactyl/images/tree/java) docker image,
 which can be found on GitHub. This tutorial also assumes some knowledge of [Docker](https://docker.io/), we suggest
 reading up if this all looks foreign to you.
 :::
@@ -17,13 +17,13 @@ We try to make use of [Alpine Linux](https://alpinelinux.org) as much as possibl
 
 ```bash
 # ----------------------------------
-# Pterodactyl Core Dockerfile
+# Shadowdactyl Core Dockerfile
 # Environment: Java
 # Minimum Panel Version: 0.6.0
 # ----------------------------------
 FROM openjdk:8-jdk-alpine
 
-MAINTAINER Pterodactyl Software, <support@pterodactyl.io>
+MAINTAINER Shadowdactyl Software, <support@shadowdactyl.io>
 
 RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite fontconfig \
     && adduser --disabled-password --home /home/container container
@@ -61,7 +61,7 @@ adduser -D -h /home/container container
 ```
 
 ::: warning
-All Pterodactyl containers must have a user named `container`, and the user home **must** be `/home/container`.
+All Shadowdactyl containers must have a user named `container`, and the user home **must** be `/home/container`.
 :::
 
 After we create that user, we then define the default container [`USER`](https://docs.docker.com/engine/reference/builder/#user)

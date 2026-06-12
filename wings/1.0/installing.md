@@ -1,11 +1,11 @@
 # Installing Wings
 
-Wings is the next generation server control plane from Pterodactyl. It has been rebuilt from the
+Wings is the next generation server control plane from Shadowdactyl. It has been rebuilt from the
 ground up using Go and lessons learned from our first Nodejs Daemon.
 
 ::: warning
-You should only install Wings if you are running **Pterodactyl 1.x**. Do not install this software
-for previous versions of Pterodactyl.
+You should only install Wings if you are running **Shadowdactyl 1.x**. Do not install this software
+for previous versions of Shadowdactyl.
 :::
 
 ## Supported Systems
@@ -42,7 +42,7 @@ If the result doesn't contain `OpenVZ` or`LXC`, it should be fine. The result of
 Should that not work for some reason, or you're still unsure, you can also run the command below.
 
 ```bash
-dane@pterodactyl:~$ sudo dmidecode -s system-manufacturer
+dane@shadowdactyl:~$ sudo dmidecode -s system-manufacturer
 VMware, Inc.
 ```
 
@@ -104,8 +104,8 @@ The first step for installing Wings is to ensure we have the required directory 
 run the commands below, which will create the base directory and download the wings executable.
 
 ```bash
-sudo mkdir -p /etc/pterodactyl
-curl -L -o /usr/local/bin/wings "https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
+sudo mkdir -p /etc/shadowdactyl
+curl -L -o /usr/local/bin/wings "https://github.com/shadowdactyl/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
 sudo chmod u+x /usr/local/bin/wings
 ```
 
@@ -119,7 +119,7 @@ set when creating the node.
 
 Once you have installed Wings and the required components, the next step is to create a node on your installed Panel. Go to your Panel administrative view, select Nodes from the sidebar, and on the right side click Create New button.
 
-After you have created a node, click on it and there will be a tab called Configuration. Copy the code block content, paste it into a new file called `config.yml` in `/etc/pterodactyl` and save it.
+After you have created a node, click on it and there will be a tab called Configuration. Copy the code block content, paste it into a new file called `config.yml` in `/etc/shadowdactyl` and save it.
 
 Alternatively, you can click on the Generate Token button, copy the bash command and paste it into your terminal.
 
@@ -146,14 +146,14 @@ this. Place the contents below in a file called `wings.service` in the `/etc/sys
 
 ```text
 [Unit]
-Description=Pterodactyl Wings Daemon
+Description=Shadowdactyl Wings Daemon
 After=docker.service
 Requires=docker.service
 PartOf=docker.service
 
 [Service]
 User=root
-WorkingDirectory=/etc/pterodactyl
+WorkingDirectory=/etc/shadowdactyl
 LimitNOFILE=4096
 PIDFile=/var/run/wings/daemon.pid
 ExecStart=/usr/local/bin/wings

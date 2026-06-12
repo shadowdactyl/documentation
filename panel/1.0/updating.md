@@ -5,7 +5,7 @@ This documentation covers the process for updating within the `1.x` series of re
 
 ## Panel Version Requirements
 
-Each version of Pterodactyl Panel also has a corresponding minimum version of Wings that
+Each version of Shadowdactyl Panel also has a corresponding minimum version of Wings that
 is required for it to run. Please see the chart below for how these versions line up. In
 most cases your base Wings version should match that of your Panel.
 
@@ -40,13 +40,13 @@ should see an output similar to the result below. If you do not see at least PHP
 our [PHP Upgrade Guide](/guides/php_upgrade.md) and return to this documentation afterward.
 
 ```shell
-vagrant@pterodactyl:~/app$ php -v
+vagrant@shadowdactyl:~/app$ php -v
 PHP 8.2.5 (cli) (built: Dec 21 2022 10:32:13) (NTS)
 Copyright (c) The PHP Group
 Zend Engine v4.1.5, Copyright (c) Zend Technologies
     with Zend OPcache v8.2.5, Copyright (c), by Zend Technologies
 
-vagrant@pterodactyl:~/app$ composer --version
+vagrant@shadowdactyl:~/app$ composer --version
 Composer version 2.3.5 2022-04-13 16:43:00
 ```
 
@@ -73,7 +73,7 @@ users from encountering unexpected errors and ensure everything can be updated b
 potentially new features.
 
 ```bash
-cd /var/www/pterodactyl
+cd /var/www/shadowdactyl
 
 php artisan down
 ```
@@ -81,11 +81,11 @@ php artisan down
 ### Download the Update
 
 The first step in the update process is to download the new panel files from GitHub. The command below will download
-the release archive for the most recent version of Pterodactyl, save it in the current directory and will automatically
+the release archive for the most recent version of Shadowdactyl, save it in the current directory and will automatically
 unpack the archive into your current folder.
 
 ```bash
-curl -L https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz | tar -xzv
+curl -L https://github.com/shadowdactyl/panel/releases/latest/download/panel.tar.gz | tar -xzv
 ```
 
 Once all of the files are downloaded we need to set the correct permissions on the cache and storage directories to avoid
@@ -116,7 +116,7 @@ php artisan config:clear
 
 ### Database Updates
 
-You'll also need to update your database schema for the newest version of Pterodactyl. Running the command below
+You'll also need to update your database schema for the newest version of Shadowdactyl. Running the command below
 will update the schema and ensure the default eggs we ship are up to date (and add any new ones we might have). Just
 remember, _never edit core eggs we ship_! They will be overwritten by this update process.
 
@@ -131,13 +131,13 @@ is `www-data` but can vary from system to system &mdash; sometimes being `nginx`
 
 ```bash
 # If using NGINX or Apache (not on CentOS)
-chown -R www-data:www-data /var/www/pterodactyl/*
+chown -R www-data:www-data /var/www/shadowdactyl/*
 
 # If using NGINX on CentOS
-chown -R nginx:nginx /var/www/pterodactyl/*
+chown -R nginx:nginx /var/www/shadowdactyl/*
 
 # If using Apache on CentOS
-chown -R apache:apache /var/www/pterodactyl/*
+chown -R apache:apache /var/www/shadowdactyl/*
 ```
 
 ### Restarting Queue Workers
@@ -159,7 +159,7 @@ php artisan up
 
 ### Telemetry
 
-Since 1.11, Pterodactyl will collect anonymous telemetry to help us better understand how the
+Since 1.11, Shadowdactyl will collect anonymous telemetry to help us better understand how the
 software is being used. To learn more about this feature and to opt-out, please see our [Telemetry](./additional_configuration.md#telemetry)
 documentation. Remember to continue with the rest of the upgrade.
 

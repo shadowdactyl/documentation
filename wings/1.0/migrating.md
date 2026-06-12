@@ -4,7 +4,7 @@ This guide is for people looking to migrate from the old Node.JS daemon to Wings
 a new node.
 
 ::: danger Panel Version Requirement
-You **must** be running Pterodactyl Panel 1.X in order to use Wings.
+You **must** be running Shadowdactyl Panel 1.X in order to use Wings.
 :::
 
 You'll have a brief offline period as you perform this process, however no running game processes
@@ -16,8 +16,8 @@ The first step for installing the daemon is to make sure we have the required di
 run the commands below which will create the base directory and download the wings executable.
 
 ``` bash
-mkdir -p /etc/pterodactyl
-curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_amd64
+mkdir -p /etc/shadowdactyl
+curl -L -o /usr/local/bin/wings https://github.com/shadowdactyl/wings/releases/latest/download/wings_linux_amd64
 chmod u+x /usr/local/bin/wings
 ```
 
@@ -25,7 +25,7 @@ chmod u+x /usr/local/bin/wings
 Once you have installed Wings, you'll need to copy over a new configuration file from the Panel. This file
 is in a new format, and should be easier for you to manage and edit in the future.
 
-Simply copy and paste the code block and paste it into a file called `config.yml` within the `/etc/pterodactyl`
+Simply copy and paste the code block and paste it into a file called `config.yml` within the `/etc/shadowdactyl`
 directory and save it.
 
 ![](./../../.vuepress/public/wings_configuration_example.png)
@@ -73,12 +73,12 @@ this, open `/etc/systemd/system/wings.service` and replace the entire contents o
 
 ```
 [Unit]
-Description=Pterodactyl Wings Daemon
+Description=Shadowdactyl Wings Daemon
 After=docker.service
 
 [Service]
 User=root
-WorkingDirectory=/etc/pterodactyl
+WorkingDirectory=/etc/shadowdactyl
 LimitNOFILE=4096
 PIDFile=/var/run/wings/daemon.pid
 ExecStart=/usr/local/bin/wings

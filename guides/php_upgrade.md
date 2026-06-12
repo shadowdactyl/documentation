@@ -1,7 +1,7 @@
 # Upgrading PHP
 
 This documentation includes instructions for upgrading your system to the latest version of PHP. Please reference the
-table below to check what version you need for your version of Pterodactyl.
+table below to check what version you need for your version of Shadowdactyl.
 
 | Panel Version   | PHP Version   |
 | --------------- | ------------- |
@@ -39,13 +39,13 @@ composer self-update --2
 :::: tabs
 ::: tab "NGINX"
 After upgrading to PHP 8.3, you will most likely need to update your NGINX configuration. Your configuration file
-is most likely called `pterodactyl.conf` and located in the `/etc/nginx/sites-available/` directory, or if on CentOS,
+is most likely called `shadowdactyl.conf` and located in the `/etc/nginx/sites-available/` directory, or if on CentOS,
 `/etc/nginx/conf.d/`.
 
 Make sure to update the path in the command below to reflect the actual location of your configuration file.
 
 ``` bash
-sed -i -e 's/php[7|8].[0-9]-fpm.sock/php8.3-fpm.sock/' /etc/nginx/sites-available/pterodactyl.conf
+sed -i -e 's/php[7|8].[0-9]-fpm.sock/php8.3-fpm.sock/' /etc/nginx/sites-available/shadowdactyl.conf
 ```
 
 Once you have edited the file run the command below to reload nginx and apply your changes.

@@ -4,7 +4,7 @@ Upgrading Wings is a painless process and should take less than a minute to comp
 
 ## Wings Version Requirements
 
-Each version of Pterodactyl Panel also has a corresponding minimum version of Wings that
+Each version of Shadowdactyl Panel also has a corresponding minimum version of Wings that
 is required for it to run. Please see the chart below for how these versions line up. In
 most cases your base Wings version should match that of your Panel.
 
@@ -33,7 +33,7 @@ servers **will not** be affected._
 
 ``` bash
 systemctl stop wings
-curl -L -o /usr/local/bin/wings "https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
+curl -L -o /usr/local/bin/wings "https://github.com/shadowdactyl/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
 chmod u+x /usr/local/bin/wings
 ```
 

@@ -4,10 +4,10 @@
             <div class="container z-10">
                 <div class="text-center">
                     <div>
-                        <img class="max-w-xl w-full inline-block" src="https://cdn.pterodactyl.io/logos/new/pterodactyl_logo_transparent.png" alt="Pterodactyl">
+                        <img class="max-w-xl w-full inline-block" src="https://cdn.shadowdactyl.io/logos/new/shadowdactyl_logo_transparent.png" alt="Shadowdactyl">
                     </div>
                     <div class="mt-4">
-                        <!-- <a class="btn hidden md:inline-block" href="https://demo.pterodactyl.io" target="_blank" rel="nofollow noopener">Demo</a> -->
+                        <!-- <a class="btn hidden md:inline-block" href="https://demo.shadowdactyl.io" target="_blank" rel="nofollow noopener">Demo</a> -->
                         <router-link class="btn inline-block" to="/panel/getting_started.html">Let's Get Started!</router-link>
                     </div>
                 </div>
@@ -15,21 +15,21 @@
         </div>
         <div class="section bg-white">
             <div class="container text-center">
-                <h1 class="text-blue mb-4">Pterodactyl Panel</h1>
+                <h1 class="text-blue mb-4">Shadowdactyl Panel</h1>
                 <h3 class="border-0 font-normal leading-normal mx-auto" style="max-width: 50rem">
-                    Pterodactyl&reg; is a free, open-source game server management panel built with PHP, React, and Go.
-                    Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers
+                    Shadowdactyl&reg; is a free, open-source game server management panel built with PHP, React, and Go.
+                    Designed with security in mind, Shadowdactyl runs all game servers in isolated Docker containers
                     while exposing a beautiful and intuitive UI to end users.
                 </h3>
                 <h3 class="border-0 leading-normal mx-auto mt-4" style="max-width: 50rem">
                     Stop settling for less. Make game servers a first class citizen on your platform.
                 </h3>
-                <img class="max-w-lg w-full m-4 inline-block" src="https://cdn.pterodactyl.io/site-assets/mockup-macbook-grey-1.0.png">
+                <img class="max-w-lg w-full m-4 inline-block" src="https://cdn.shadowdactyl.io/site-assets/mockup-macbook-grey-1.0.png">
             </div>
         </div>
         <div class="section bg-blue text-grey-lightest">
             <div class="container text-center">
-                <h1 class="mb-4">Why Pterodactyl&reg;</h1>
+                <h1 class="mb-4">Why Shadowdactyl&reg;</h1>
                 <div class="flex flex-wrap">
                     <div class="feature">
                         <span><i class="icon icon-lock"></i></span>
@@ -49,12 +49,12 @@
                     <div class="feature">
                         <span><i class="icon icon-wallet"></i></span>
                         <h3>Free & Open Source</h3>
-                        <p>Pterodactyl is 100% free and licensed under a MIT license. All of our code is completely open source as well.</p>
+                        <p>Shadowdactyl is 100% free and licensed under a MIT license. All of our code is completely open source as well.</p>
                     </div>
                     <div class="feature">
                         <span><i class="icon icon-browser"></i></span>
                         <h3>User Friendly</h3>
-                        <p>Save the furious clicking and screaming for Overwatch. Pterodactyl's interface is designed so well even Hanzo can use it.</p>
+                        <p>Save the furious clicking and screaming for Overwatch. Shadowdactyl's interface is designed so well even Hanzo can use it.</p>
                     </div>
                     <div class="feature">
                         <span><i class="icon icon-expand"></i></span>
@@ -69,38 +69,38 @@
                 <h1>Screenshots</h1>
                 <div class="screenshots">
                     <slick ref="slick" :options="slickOptions">
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-1.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-1.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-1.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-1.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-2.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-2.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-2.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-2.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-3.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-3.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-3.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-3.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-4.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-4.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-4.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-4.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-5.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-5.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-5.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-5.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-6.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-6.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-6.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-6.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-7.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-7.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-7.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-7.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-8.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-8.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-8.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-8.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-9.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-9.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-9.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-9.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-10.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-10.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-10.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-10.png">
                         </a>
-                        <a href="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-11.png">
-                            <img src="https://cdn.pterodactyl.io/site-assets/carousel/screenshot-11.png">
+                        <a href="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-11.png">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/carousel/screenshot-11.png">
                         </a>
                     </slick>
                 </div>
@@ -109,44 +109,44 @@
         <div class="section bg-blue text-grey-lightest">
             <div class="container text-center">
                 <h1>Get Started</h1>
-                <p class="m-4">Ready to fly on the Pterodactyl?</p>
+                <p class="m-4">Ready to fly on the Shadowdactyl?</p>
                 <div class="mt-4">
                     <router-link class="btn inline-block" to="/project/introduction.html">About the project</router-link>
-                    <a class="btn inline-block" href="https://discord.gg/pterodactyl">Discord</a>
+                    <a class="btn inline-block" href="https://discord.gg/shadowdactyl">Discord</a>
                 </div>
             </div>
         </div>
         <div class="section bg-black text-grey-lighter text-sm less-padding">
             <div class="container text-center">
                 <div>
-                    <img class="h-20" :src="$withBase('logos/banner_logo.png')" alt="pterodactyl banner logo">
+                    <img class="h-20" :src="$withBase('logos/banner_logo.png')" alt="shadowdactyl banner logo">
                 </div>
                 <div class="text-left md:flex">
                     <div class="flex-none w-full md:w-1/2 md:pr-12">
                         <p class="my-4">
-                            Since 2015 Pterodactyl&reg; has been delivering robust, performant, and secure software that allows
+                            Since 2015 Shadowdactyl&reg; has been delivering robust, performant, and secure software that allows
                             individuals, networks, and hosting companies to run game servers at scale; easily. Best of all?
                             No exorbitant monthly costs.
                         </p>
                         <p class="my-4">
-                            Take the plunge today and discover why thousands of users trust Pterodactyl&reg; to manage their
+                            Take the plunge today and discover why thousands of users trust Shadowdactyl&reg; to manage their
                             game servers.
                         </p>
                     </div>
                     <div class="hidden md:block md:flex-1 md:pr-12">
-                        <p><a class="text-grey-lightest" href="https://github.com/pterodactyl">GitHub</a></p>
-                        <p><a class="text-grey-lightest" href="https://github.com/sponsors/pterodactyl">Sponsor</a></p>
-                        <p><a class="text-grey-lightest" href="https://github.com/sponsors/pterodactyl">Donate</a></p>
+                        <p><a class="text-grey-lightest" href="https://github.com/shadowdactyl">GitHub</a></p>
+                        <p><a class="text-grey-lightest" href="https://github.com/sponsors/shadowdactyl">Sponsor</a></p>
+                        <p><a class="text-grey-lightest" href="https://github.com/sponsors/shadowdactyl">Donate</a></p>
                         <p><a class="text-grey-lightest" href="/panel/troubleshooting.html">Troubleshooting</a></p>
-                        <p><a class="text-grey-lightest" href="https://pterodactyleggs.com">Additional Game Configurations</a></p>
+                        <p><a class="text-grey-lightest" href="https://shadowdactyleggs.com">Additional Game Configurations</a></p>
                     </div>
                     <div class="text-center mt-8 md:flex-1 md:mt-0">
-                        <a href="https://discord.gg/pterodactyl" target="_blank" rel="nofollow noopener">
-                            <img src="https://cdn.pterodactyl.io/site-assets/discord.png" class="w-3/4">
+                        <a href="https://discord.gg/shadowdactyl" target="_blank" rel="nofollow noopener">
+                            <img src="https://cdn.shadowdactyl.io/site-assets/discord.png" class="w-3/4">
                         </a>
                     </div>
                 </div>
-                <div class="footer">MIT Licensed | Pterodactyl&reg; Copyright &copy; Dane Everitt and contributors</div>
+                <div class="footer">MIT Licensed | Shadowdactyl&reg; Copyright &copy; Dane Everitt and contributors</div>
             </div>
         </div>
     </div>

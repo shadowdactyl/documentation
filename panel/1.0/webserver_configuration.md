@@ -17,7 +17,7 @@ rm /etc/nginx/sites-enabled/default
 ```
 
 Now, you should paste the contents of the file below, replacing `<domain>` with your domain name being used in a file called
-`pterodactyl.conf` and place the file in `/etc/nginx/sites-available/`, or &mdash; if on RHEL, Rocky Linux, or AlmaLinux, `/etc/nginx/conf.d/`.
+`shadowdactyl.conf` and place the file in `/etc/nginx/sites-available/`, or &mdash; if on RHEL, Rocky Linux, or AlmaLinux, `/etc/nginx/conf.d/`.
 
 <<< @/.snippets/webservers/nginx-php8.3.conf{4,11,26-27}
 
@@ -27,7 +27,7 @@ The final step is to enable your NGINX configuration and restart it.
 
 ```bash
 # You do not need to symlink this file if you are using RHEL, Rocky Linux, or AlmaLinux.
-sudo ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/pterodactyl.conf
+sudo ln -s /etc/nginx/sites-available/shadowdactyl.conf /etc/nginx/sites-enabled/shadowdactyl.conf
 
 # You need to restart nginx regardless of OS.
 sudo systemctl restart nginx
@@ -42,7 +42,7 @@ rm /etc/nginx/sites-enabled/default
 ```
 
 Now, you should paste the contents of the file below, replacing `<domain>` with your domain name being used in a file called
-`pterodactyl.conf` and place the file in `/etc/nginx/sites-available/`, or &mdash; if on RHEL, Rocky Linux, or AlmaLinux, `/etc/nginx/conf.d/`.
+`shadowdactyl.conf` and place the file in `/etc/nginx/sites-available/`, or &mdash; if on RHEL, Rocky Linux, or AlmaLinux, `/etc/nginx/conf.d/`.
 
 <<< @/.snippets/webservers/nginx-php8.3-nossl.conf{4}
 
@@ -52,7 +52,7 @@ The final step is to enable your NGINX configuration and restart it.
 
 ```bash
 # You do not need to symlink this file if you are using RHEL, Rocky Linux, or AlmaLinux.
-sudo ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/pterodactyl.conf
+sudo ln -s /etc/nginx/sites-available/shadowdactyl.conf /etc/nginx/sites-enabled/shadowdactyl.conf
 
 # You need to restart nginx regardless of OS.
 sudo systemctl restart nginx
@@ -67,7 +67,7 @@ a2dissite 000-default.conf
 ```
 
 Now, you should paste the contents of the file below, replacing `<domain>` with your domain name being used in a file called
-`pterodactyl.conf` and place the file in `/etc/apache2/sites-available`, or &mdash; if on RHEL, Rocky Linux, or AlmaLinux, `/etc/httpd/conf.d/`.
+`shadowdactyl.conf` and place the file in `/etc/apache2/sites-available`, or &mdash; if on RHEL, Rocky Linux, or AlmaLinux, `/etc/httpd/conf.d/`.
 
 Note: When using Apache, make sure you have the `libapache2-mod-php8.3` package installed or else PHP will not display on your webserver.
 
@@ -80,7 +80,7 @@ below!_ You only need to run `systemctl restart httpd`.
 
 ```bash
 # You do not need to run any of these commands on RHEL, Rocky Linux, or AlmaLinux
-sudo ln -s /etc/apache2/sites-available/pterodactyl.conf /etc/apache2/sites-enabled/pterodactyl.conf
+sudo ln -s /etc/apache2/sites-available/shadowdactyl.conf /etc/apache2/sites-enabled/shadowdactyl.conf
 sudo a2enmod rewrite
 sudo a2enmod ssl
 sudo systemctl restart apache2
@@ -95,7 +95,7 @@ a2dissite 000-default.conf
 ```
 
 Now, you should paste the contents of the file below, replacing `<domain>` with your domain name being used in a file called
-`pterodactyl.conf` and place the file in `/etc/apache2/sites-available`, or &mdash; if on RHEL, Rocky Linux, or AlmaLinux, `/etc/httpd/conf.d/`.
+`shadowdactyl.conf` and place the file in `/etc/apache2/sites-available`, or &mdash; if on RHEL, Rocky Linux, or AlmaLinux, `/etc/httpd/conf.d/`.
 
 Note: When using Apache, make sure you have the `libapache2-mod-php8.3` package installed or else PHP will not display on your webserver.
 
@@ -108,7 +108,7 @@ below!_ You only need to run `systemctl restart httpd`.
 
 ```bash
 # You do not need to run any of these commands on RHEL, Rocky Linux, or AlmaLinux
-sudo ln -s /etc/apache2/sites-available/pterodactyl.conf /etc/apache2/sites-enabled/pterodactyl.conf
+sudo ln -s /etc/apache2/sites-available/shadowdactyl.conf /etc/apache2/sites-enabled/shadowdactyl.conf
 sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```

@@ -12,12 +12,12 @@ Members of the project team have a red username in our Discord server.
 
 ## Community Team
 
-Pterodactyl would not be as successful as it is today without the help of our fantastic community support team. These
+Shadowdactyl would not be as successful as it is today without the help of our fantastic community support team. These
 members can be found in our Discord server and are distinguished with a yellow username.
 
 ## Sponsors
 
-The following companies help fund Pterodactyl's development. [Interested in becoming a sponsor?](https://github.com/sponsors/pterodactyl)
+The following companies help fund Shadowdactyl's development. [Interested in becoming a sponsor?](https://github.com/sponsors/shadowdactyl)
 
 | Company                                                      | About                                                                                                                                                                                                                                                                 |
 | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -26,14 +26,14 @@ The following companies help fund Pterodactyl's development. [Interested in beco
 | [**BisectHosting**](https://www.bisecthosting.com/)          | BisectHosting provides Minecraft, Valheim and other server hosting services with the highest reliability and lightning fast support since 2012.                                                                                                                       |
 | [**MineStrator**](https://minestrator.com/)                  | Looking for the most highend French hosting company for your minecraft server? More than 24,000 members on our discord trust us. Give us a try!                                                                                                                       |
 | [**HostEZ**](https://hostez.io)                              | US & EU Rust & Minecraft Hosting. DDoS Protected bare metal, VPS and colocation with low latency, high uptime and maximum availability. EZ!                                                                                                                           |
-| [**Blueprint**](https://blueprint.zip/?pterodactyl=true)     | Create and install Pterodactyl addons and themes with the growing Blueprint framework - the package-manager for Pterodactyl. Use multiple modifications at once without worrying about conflicts and make use of the large extension ecosystem.                       |
+| [**Blueprint**](https://blueprint.zip/?shadowdactyl=true)     | Create and install Shadowdactyl addons and themes with the growing Blueprint framework - the package-manager for Shadowdactyl. Use multiple modifications at once without worrying about conflicts and make use of the large extension ecosystem.                       |
 | [**indifferent broccoli**](https://indifferentbroccoli.com/) | indifferent broccoli is a game server hosting and rental company. With us, you get top-notch computer power for your gaming sessions. We destroy lag, latency, and complexity--letting you focus on the fun stuff.                                                    |
 
 ## License
 
-Pterodactyl® Copyright © 2015 Dane Everitt and contributors.
+Shadowdactyl® Copyright © 2015 Dane Everitt and contributors.
 
-Code released under the [MIT License](https://github.com/pterodactyl/panel/blob/1.0-develop/LICENSE.md).
+Code released under the [MIT License](https://github.com/shadowdactyl/panel/blob/1.0-develop/LICENSE.md).
 
 ## Release Signing
 

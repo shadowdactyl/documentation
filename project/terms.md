@@ -1,5 +1,5 @@
 # Terminology
-**Panel** — This refers to Pterodactyl Panel itself, and is what allows you to add additional
+**Panel** — This refers to Shadowdactyl Panel itself, and is what allows you to add additional
 nodes and servers to the system.
 
 **Node** — A node is a physical machine that runs an instance of Wings.
@@ -21,7 +21,7 @@ created on nodes, and you can have multiple servers per node.
 
 **Egg**  — Each egg is usually used to store the configuration of a specific type of game, for example: Vanilla, Spigot or Bungeecord for Minecraft.
 
-**Yolks**  — A curated collection of core docker images that can be used with Pterodactyl's Egg system.
+**Yolks**  — A curated collection of core docker images that can be used with Shadowdactyl's Egg system.
 
 
 ## Simple Setup Diagram

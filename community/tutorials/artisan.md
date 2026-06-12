@@ -1,6 +1,6 @@
 # Artisan CLI
 
-The Artisan CLI, command line interface, is part of the Laravel framework, which Pterodactyl is built on. The Artisan file is located in `/var/www/pterodactyl` if you followed the official guide. This guide goes over some more Pterodactyl specific/related Artisan commands, which are all prefixed with the letter `p` (e.g. `p:user:make`). If you'd like to view all commands, you can do so by running:
+The Artisan CLI, command line interface, is part of the Laravel framework, which Shadowdactyl is built on. The Artisan file is located in `/var/www/shadowdactyl` if you followed the official guide. This guide goes over some more Shadowdactyl specific/related Artisan commands, which are all prefixed with the letter `p` (e.g. `p:user:make`). If you'd like to view all commands, you can do so by running:
 
 ```bash
 php artisan list
@@ -98,4 +98,4 @@ php artisan p:upgrade   {--user=www-data}
                         {--skip-download}
 ```
 
-Downloads a new archive for Pterodactyl and executes the normal upgrade commands.
+Downloads a new archive for Shadowdactyl and executes the normal upgrade commands.

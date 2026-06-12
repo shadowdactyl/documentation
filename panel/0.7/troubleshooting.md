@@ -12,7 +12,7 @@ If you ever encounter an unexpected error with the Panel the first thing you wil
 To retrieve these, simply execute the command below which will output the last 100 lines of the Panel's log file.
 
 ``` bash
-tail -n 100 /var/www/pterodactyl/storage/logs/laravel-$(date +%F).log
+tail -n 100 /var/www/shadowdactyl/storage/logs/laravel-$(date +%F).log
 ```
 
 ### Parsing the Error
@@ -57,7 +57,7 @@ If you're trying to go through a bunch of errors quickly, you can use the comman
 be the actual error lines, without all of the stack traces.
 
 ``` bash
-tail -n 1000 /var/www/pterodactyl/storage/logs/laravel-$(date +%F).log | grep "\[$(date +%Y)"
+tail -n 1000 /var/www/shadowdactyl/storage/logs/laravel-$(date +%F).log | grep "\[$(date +%Y)"
 ```
 
 ## Transfer Exceptions / XHR Poll Error
@@ -141,7 +141,7 @@ semodule -i redis_t.pp
 
 ### In case there is any weirdness with parts of the panel
 ``` bash
-restorecon -R /var/www/pterodactyl/
+restorecon -R /var/www/shadowdactyl/
 ```
 
 ### Daemon Connection Errors
@@ -154,7 +154,7 @@ semodule -i http_port_t.pp
 If you are on a RHEL/CentOS server with firewalld installed you may have broken DNS.
 
 ```
-firewall-cmd --permanent --zone=trusted --change-interface=pterodactyl0
+firewall-cmd --permanent --zone=trusted --change-interface=shadowdactyl0
 firewall-cmd --reload
 ```
 
@@ -165,6 +165,6 @@ restart docker and wings after running these to be sure the rules are applied.
 
 ### DatabaseController.php:142
 ```
-production.ERROR: ErrorException: Undefined variable: host in /var/www/pterodactyl/app/Http/Controllers/Admin/DatabaseController.php:142
+production.ERROR: ErrorException: Undefined variable: host in /var/www/shadowdactyl/app/Http/Controllers/Admin/DatabaseController.php:142
 ```
 The database user you are trying to use doesn't have appropriate grants/has used incorrect password.

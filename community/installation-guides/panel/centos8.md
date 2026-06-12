@@ -1,6 +1,6 @@
 # Enterprise Linux 8 and Fedora Server 40
 
-This guide provides comprehensive instructions for installing Pterodactyl v1.X on CentOS 8, Rocky Linux 8, AlmaLinux 8, and Fedora Server 40, including all dependencies.
+This guide provides comprehensive instructions for installing Shadowdactyl v1.X on CentOS 8, Rocky Linux 8, AlmaLinux 8, and Fedora Server 40, including all dependencies.
 
 [[toc]]
 
@@ -50,15 +50,15 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 
 ## PHP Configuration
 
-Create a new PHP-FPM configuration file in /etc/php-fpm.d/www-pterodactyl.conf:
+Create a new PHP-FPM configuration file in /etc/php-fpm.d/www-shadowdactyl.conf:
 
 ```conf
-[pterodactyl]
+[shadowdactyl]
 
 user = nginx
 group = nginx
 
-listen = /var/run/php-fpm/pterodactyl.sock
+listen = /var/run/php-fpm/shadowdactyl.sock
 listen.owner = nginx
 listen.group = nginx
 listen.mode = 0750
@@ -80,5 +80,5 @@ Excellent, we now have all of the required dependencies installed and configured
 
 
 ::: tip
-You will need to change the fastcgi_pass path in the Nginx configuration to `/var/run/php-fpm/pterodactyl.sock`
+You will need to change the fastcgi_pass path in the Nginx configuration to `/var/run/php-fpm/shadowdactyl.sock`
 :::

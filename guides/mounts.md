@@ -6,7 +6,7 @@ Mounts is a feature that allows administrators to mount other directories from t
 
 For security reasons it is not possible to mount directories on a node by default. Directories that should be mountable have to be specified explicitly in the Wings configuration.
 
-In the Wings configuration file (`/etc/pterodactyl/config.yml`) the `allowed_mounts` field is used to list mountable directories. The listed directories and all their subdirectories can be mounted.
+In the Wings configuration file (`/etc/shadowdactyl/config.yml`) the `allowed_mounts` field is used to list mountable directories. The listed directories and all their subdirectories can be mounted.
 
 ```yml
 allowed_mounts:
@@ -56,11 +56,11 @@ Mounts do not appear in the Panel's file manager, nor are they accessible via SF
 
 ### Example Mount
 
-The example mount below is stored in the path `/var/lib/pterodactyl/mounts`, which we add to the Wings `config.yml`
+The example mount below is stored in the path `/var/lib/shadowdactyl/mounts`, which we add to the Wings `config.yml`
 
 ```yml
 allowed_mounts:
-  - /var/lib/pterodactyl/mounts
+  - /var/lib/shadowdactyl/mounts
 ```
 
 ![](./../.vuepress/public/gmod_mount_example.png)

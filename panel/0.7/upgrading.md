@@ -11,7 +11,7 @@ the upgrade process for each version of the software.
 This documentation is for **end-of-life software** which does not recieve any security updates or support
 from the community. This documentation has been left accessible for historial reasons.
 
-You should be installing and using [Pterodactyl Panel 1.0](/panel/1.0/getting_started.md) in production environments.
+You should be installing and using [Shadowdactyl Panel 1.0](/panel/1.0/getting_started.md) in production environments.
 :::
 
 ## Maintenance Mode

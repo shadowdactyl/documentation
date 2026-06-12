@@ -10,14 +10,14 @@ This documentation is for **abandoned software** which does not recieve any secu
 from the community. This documentation has been left accessible for historial reasons.
 
 You should be installing and using [Wings](/wings/1.0/installing.md) in production environments with
-[Pterodactyl Panel 1.0](/panel/1.0/getting_started.md).
+[Shadowdactyl Panel 1.0](/panel/1.0/getting_started.md).
 :::
 
 ::: warning
 Standalone SFTP support was introduced in `Panel@v0.7.11` and `Daemon@v0.6.8` and will not work with prior versions.
 :::
 
-Pterodactyl now ships with the option to use a [standalone SFTP server](https://github.com/pterodactyl/sftp-server)
+Shadowdactyl now ships with the option to use a [standalone SFTP server](https://github.com/shadowdactyl/sftp-server)
 rather than using the one that was built into the Daemon. This provides better compatibility with SFTP clients, improved
 transfer speeds, and a more native approach to file handling and server operation.
 
@@ -47,7 +47,7 @@ Once you've done that, restarting the Daemon will apply the change and not boot 
 To download the standalone server, execute the command below in your Daemon's base directory (generally `/srv/daemon`).
 
 ``` sh
-curl -Lo sftp-server https://github.com/pterodactyl/sftp-server/releases/download/v1.0.5/sftp-server
+curl -Lo sftp-server https://github.com/shadowdactyl/sftp-server/releases/download/v1.0.5/sftp-server
 chmod +x sftp-server
 ```
 
@@ -62,7 +62,7 @@ Finally, start the SFTP server so that you can then use it to access your files.
 ```
 
 By default, this will start the SFTP server on the old port of `2022`. If you want to use a different port it can be
-specified by passing the `--port` flag. For more advanced usage, please refer to the [GitHub README](https://github.com/pterodactyl/sftp-server/tree/release/v1.0.4#running)
+specified by passing the `--port` flag. For more advanced usage, please refer to the [GitHub README](https://github.com/shadowdactyl/sftp-server/tree/release/v1.0.4#running)
 which includes all of the flags and their default values.
 
 ## Daemonize Server
@@ -71,7 +71,7 @@ background. Place the contents below in a file called `pterosftp.service` in the
 
 ``` text
 [Unit]
-Description=Pterodactyl Standalone SFTP Server
+Description=Shadowdactyl Standalone SFTP Server
 After=wings.service
 
 [Service]

@@ -14,7 +14,7 @@ This guide is based off the [official installation documentation](/panel/1.0/get
 
 ## Dependency Installation
 
-In this guide, we will install the required dependencies for the Pterodactyl panel. After that, you can follow the official installation documentation.
+In this guide, we will install the required dependencies for the Shadowdactyl panel. After that, you can follow the official installation documentation.
 
 ```bash
 # Install necessary packages

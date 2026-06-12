@@ -7,7 +7,7 @@ These are advanced configurations for Wings. You risk breaking Wings and making 
 you misconfigure something. Proceed only if you know what each configuration value does.
 :::
 
-You must apply all changes to your Wings `config.yml` file located at `/etc/pterodactyl` and restart wings. Verify your config file using [Yaml Lint](http://www.yamllint.com/) should you receive errors related to YAML parsing.
+You must apply all changes to your Wings `config.yml` file located at `/etc/shadowdactyl` and restart wings. Verify your config file using [Yaml Lint](http://www.yamllint.com/) should you receive errors related to YAML parsing.
 
 ## Private Registries
 
@@ -33,10 +33,10 @@ docker:
 
 ## Custom Network Interfaces
 
-You can change the network interface that Wings uses for all containers by editing the network name; it is by default set to `pterodactyl_nw`. For example, to enable Docker host mode change the network name to `host`.
+You can change the network interface that Wings uses for all containers by editing the network name; it is by default set to `shadowdactyl_nw`. For example, to enable Docker host mode change the network name to `host`.
 
 ::: warning
-Changing network mode to `host` grants Pterodactyl direct access to all machine interfaces and Panel users can bind to any IP or Port even if it's not allocated to their container. You will lose all benefits of Docker network isolation. It is not recommended for public installations that are hosting other users' servers.
+Changing network mode to `host` grants Shadowdactyl direct access to all machine interfaces and Panel users can bind to any IP or Port even if it's not allocated to their container. You will lose all benefits of Docker network isolation. It is not recommended for public installations that are hosting other users' servers.
 :::
 
 ### Example of usage
@@ -48,8 +48,8 @@ docker:
     network_mode: host
 ```
 
-After making changes, the following commands will stop the Wings, remove the Pterodactyl network, and start the Wings again. Run at your own risk.
-`systemctl stop wings && docker network rm pterodactyl_nw && systemctl start wings`
+After making changes, the following commands will stop the Wings, remove the Shadowdactyl network, and start the Wings again. Run at your own risk.
+`systemctl stop wings && docker network rm shadowdactyl_nw && systemctl start wings`
 
 ## Enabling Cloudflare proxy
 
@@ -120,7 +120,7 @@ installer_limits:
 
 ## Other values
 
-More commonly discussed values. View all Wings config values and explanations in [these two files.](https://github.com/pterodactyl/wings/tree/develop/config)
+More commonly discussed values. View all Wings config values and explanations in [these two files.](https://github.com/shadowdactyl/wings/tree/develop/config)
 
 | Setting Key                | Default Value | Notes                                                                                                                                                      |
 | -------------------------- | :-----------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -129,5 +129,5 @@ More commonly discussed values. View all Wings config values and explanations in
 | websocket_log_count        |      150      | The number of lines to display in the console                                                                                                              |
 | detect_clean_exit_as_crash |     true      | Mark server as crashed if it's stopped without user interaction, e.g., not pressing stop button                                                            |
 | (crash detection) timeout  |      60       | Timeout between server crashes that will not cause the server to be automatically restarted                                                                |
-| app_name                   | "Pterodactyl" | Changes the name of the daemon, shown in the panel's game console                                                                                          |
+| app_name                   | "Shadowdactyl" | Changes the name of the daemon, shown in the panel's game console                                                                                          |
 | check_permissions_on_boot  |     true      | Check all file permissions on each boot. Disable this when you have a very large amount of files and the server startup is hanging on checking permissions |

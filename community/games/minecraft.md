@@ -4,7 +4,7 @@
 
 ## Configuring a Server Network (BungeeCord, Waterfall, HexaCord, etc.)
 
-If you want to operate Minecraft proxy servers like BungeeCord, Waterfall, HexaCord, etc. securely, you can do so with pterodactyl alone as long as you stay on the same node. It differs from a traditional setup in a few ways and might require additonal firewall rules, which is what this guide is for.
+If you want to operate Minecraft proxy servers like BungeeCord, Waterfall, HexaCord, etc. securely, you can do so with shadowdactyl alone as long as you stay on the same node. It differs from a traditional setup in a few ways and might require additonal firewall rules, which is what this guide is for.
 
 :::warning
 For the setup described below, it is necessary that all servers are on the same node.
@@ -28,7 +28,7 @@ The actual game servers behind the proxy should use allocations with `127.0.0.1`
 
 ### proxy server settings
 
-As the proxy server, like all servers, is running in a docker container with network isolation, `localhost`/`127.0.0.1` doesn't refer to the node, but to the container. The node can be reached from within the container using `172.18.0.1` (unless the pterodactyl network is configured differently) instead. You therefore need to use this IP in your proxy server configuration.
+As the proxy server, like all servers, is running in a docker container with network isolation, `localhost`/`127.0.0.1` doesn't refer to the node, but to the container. The node can be reached from within the container using `172.18.0.1` (unless the shadowdactyl network is configured differently) instead. You therefore need to use this IP in your proxy server configuration.
 
 #### bungeecord/waterfall configuration
 
@@ -52,9 +52,9 @@ set bungeecord to `true`
 
 ### Firewalls
 
-If you are using a firewall, additional rules might be required to allow servers to reach each other on the node. In this case the proxy server needs to reach all of the game servers behind it. Therefore we need to allow traffic from the pterodactyl network to the server ports on localhost.
+If you are using a firewall, additional rules might be required to allow servers to reach each other on the node. In this case the proxy server needs to reach all of the game servers behind it. Therefore we need to allow traffic from the shadowdactyl network to the server ports on localhost.
 
-You can use the following commands as an example. `172.18.0.1` is the default address referring to the node within the pterodactyl network. Replace `<LOCALHOST_PORT>` with the allocated localhost ports of the game servers.
+You can use the following commands as an example. `172.18.0.1` is the default address referring to the node within the shadowdactyl network. Replace `<LOCALHOST_PORT>` with the allocated localhost ports of the game servers.
 
 :::warning
 The following commands will allow any server on the node to access the opened ports.
@@ -63,15 +63,15 @@ The following commands will allow any server on the node to access the opened po
 
 #### UFW (Ubuntu)
 
-Allow access to the pterodactyl pterodactyl0 network on a specific port.
+Allow access to the shadowdactyl shadowdactyl0 network on a specific port.
 
 ``` bash
-ufw allow in on pterodactyl0 to 172.18.0.1 port <LOCALHOST_PORT> proto tcp
+ufw allow in on shadowdactyl0 to 172.18.0.1 port <LOCALHOST_PORT> proto tcp
 ```
 
 #### Firewalld (CentOS)
 
-Allow access to pterodactyl0 from the pterodactyl0 network.
+Allow access to shadowdactyl0 from the shadowdactyl0 network.
 
 :::warning
 This command will allow any server to access all other servers as well as all ports on the node.

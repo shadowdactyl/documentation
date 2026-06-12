@@ -4,13 +4,13 @@
 
 ## Backups
 
-Pterodactyl Panel allows users to create backups of their servers. In order to create backups, a backup storage method has to be configured.
+Shadowdactyl Panel allows users to create backups of their servers. In order to create backups, a backup storage method has to be configured.
 
-When changing Pterodactyl Panel's backup storage method, users may still download or delete existing backups from the prior storage driver. In the instance of migrating from S3 to local backups, S3 credentials must remain configured after switching to the local backup storage method.
+When changing Shadowdactyl Panel's backup storage method, users may still download or delete existing backups from the prior storage driver. In the instance of migrating from S3 to local backups, S3 credentials must remain configured after switching to the local backup storage method.
 
 ### Using Local Backups
 
-By default, Pterodactyl Panel uses local storage via Wings for backups. That said, this method of backup storage can be explicitly set with the following configuration in the `.env` file:
+By default, Shadowdactyl Panel uses local storage via Wings for backups. That said, this method of backup storage can be explicitly set with the following configuration in the `.env` file:
 
 ```bash
 # Sets your panel to use local storage via Wings for backups
@@ -68,7 +68,7 @@ AWS_BACKUPS_STORAGE_CLASS=STANDARD_IA
 
 ## Reverse Proxy Setup
 
-When running Pterodactyl behind a reverse proxy, such as [Cloudflare's Flexible SSL](https://support.cloudflare.com/hc/en-us/articles/200170416-What-do-the-SSL-options-mean-)
+When running Shadowdactyl behind a reverse proxy, such as [Cloudflare's Flexible SSL](https://support.cloudflare.com/hc/en-us/articles/200170416-What-do-the-SSL-options-mean-)
 or Nginx/Apache/Caddy, etc., you will need to make a quick modification to the Panel to ensure things continue to work as expected. By default, when using these reverse proxies,
 your Panel will not correctly handle requests. You'll most likely be unable to login or see security warnings in your browser console as it attempts to load insecure assets.
 This is because the internal logic the Panel uses to determine how links should be generated thinks it is running over HTTP and not over HTTPS.
@@ -79,7 +79,7 @@ the chances are that something like `TRUSTED_PROXIES=127.0.0.1` will work for yo
 
 ### NGINX Specific Configuration
 
-For Pterodactyl to properly respond to an NGINX reverse proxy, the NGINX `location` config must contain the following lines:
+For Shadowdactyl to properly respond to an NGINX reverse proxy, the NGINX `location` config must contain the following lines:
 
 ```Nginx
 proxy_set_header X-Real-IP $remote_addr;
@@ -151,12 +151,12 @@ mariadb -u root -p
 mysql -u root -p
 ```
 ```sql
-UPDATE panel.settings SET value = 0 WHERE `key` = 'settings::pterodactyl:auth:2fa_required';
+UPDATE panel.settings SET value = 0 WHERE `key` = 'settings::shadowdactyl:auth:2fa_required';
 ```
 
 ### Disable 2FA for a specific user
 
-Run the following command in your `/var/www/pterodactyl` directory.
+Run the following command in your `/var/www/shadowdactyl` directory.
 
 ``` bash
 php artisan p:user:disable2fa
@@ -179,7 +179,7 @@ telemetry data.  The telemetry data is collected every 24 hours, there is no ong
 or local storage of the telemetry data, we collect the data right before we send it to the remote
 server.
 
-Currently, all telemetry collection logic is handled by the [TelemetryCollectionService](https://github.com/pterodactyl/panel/blob/1.0-develop/app/Services/Telemetry/TelemetryCollectionService.php#L53)
+Currently, all telemetry collection logic is handled by the [TelemetryCollectionService](https://github.com/shadowdactyl/panel/blob/1.0-develop/app/Services/Telemetry/TelemetryCollectionService.php#L53)
 on the panel.  This service is responsible for collecting all the data that is sent to the remote
 server.
 
@@ -282,10 +282,10 @@ what we are doing and why.
 ### Enabling Telemetry
 
 Telemetry is enabled by default, if you want to enable it after disabling it, edit your `.env` file
-and either remove the `PTERODACTYL_TELEMETRY_ENABLED` line, or set it to `true`.
+and either remove the `SHADOWDACTYL_TELEMETRY_ENABLED` line, or set it to `true`.
 
 ```text
-PTERODACTYL_TELEMETRY_ENABLED=true
+SHADOWDACTYL_TELEMETRY_ENABLED=true
 ```
 
 You may also use the `php artisan p:environment:setup` command to enable telemetry, optionally with
@@ -293,10 +293,10 @@ the `--telemetry` flag for a non-interactive setup.
 
 ### Disabling Telemetry
 
-To disable telemetry, edit your `.env` file and set `PTERODACTYL_TELEMETRY_ENABLED` to `false`.
+To disable telemetry, edit your `.env` file and set `SHADOWDACTYL_TELEMETRY_ENABLED` to `false`.
 
 ```text
-PTERODACTYL_TELEMETRY_ENABLED=false
+SHADOWDACTYL_TELEMETRY_ENABLED=false
 ```
 
 You may also use the `php artisan p:environment:setup` command to disable telemetry, optionally with

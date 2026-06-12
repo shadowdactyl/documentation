@@ -9,7 +9,7 @@ meta:
 This documentation is for **end-of-life software** which does not recieve any security updates or support
 from the community. This documentation has been left accessible for historial reasons.
 
-You should be installing and using [Pterodactyl Panel 1.0](/panel/1.0/getting_started.md) in production environments.
+You should be installing and using [Shadowdactyl Panel 1.0](/panel/1.0/getting_started.md) in production environments.
 :::
 
 [[toc]]
@@ -21,7 +21,7 @@ users by default.
 
 ## NGINX
 You should paste the contents of the file below, replacing `<domain>` with your domain name being used in a file called
-`pterodactyl.conf` and place it in `/etc/nginx/sites-available/`, or &mdash; if on CentOS, `/etc/nginx/conf.d/`.
+`shadowdactyl.conf` and place it in `/etc/nginx/sites-available/`, or &mdash; if on CentOS, `/etc/nginx/conf.d/`.
 
 ### NGINX With SSL
 This configuration assumes that you will be using SSL on both the Panel and Daemons for significantly improved communication
@@ -44,7 +44,7 @@ Continue reading to the bottom of this section for the final steps with NGINX!
 The final step is to enable your NGINX configuration and restart it.
 ``` bash
 # You do not need to symlink this file if you are using CentOS.
-sudo ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/pterodactyl.conf
+sudo ln -s /etc/nginx/sites-available/shadowdactyl.conf /etc/nginx/sites-enabled/shadowdactyl.conf
 
 # You need to restart nginx regardless of OS.
 systemctl restart nginx
@@ -52,7 +52,7 @@ systemctl restart nginx
 
 ## Apache
 You should paste the contents of the file below, replacing `<domain>` with your domain name being used in a file called
-`pterodactyl.conf` and place it in `/etc/apache2/sites-available`, or &mdash; if on CentOS, `/etc/httpd/conf.d/`.
+`shadowdactyl.conf` and place it in `/etc/apache2/sites-available`, or &mdash; if on CentOS, `/etc/httpd/conf.d/`.
 
 Note: When using Apache, make sure you have the `libapache2-mod-php` package installed or else PHP will not display on your webserver.
 
@@ -75,7 +75,7 @@ below!_ You only need to run `systemctl restart httpd`.
 
 ``` bash
 # You do not need to run any of these commands on CentOS
-sudo ln -s /etc/apache2/sites-available/pterodactyl.conf /etc/apache2/sites-enabled/pterodactyl.conf
+sudo ln -s /etc/apache2/sites-available/shadowdactyl.conf /etc/apache2/sites-enabled/shadowdactyl.conf
 sudo a2enmod rewrite
 systemctl restart apache2
 ```

@@ -1,5 +1,5 @@
 # CentOS 7
-This guide provides comprehensive instructions for installing Pterodactyl Wings v1.X on CentOS 7.
+This guide provides comprehensive instructions for installing Shadowdactyl Wings v1.X on CentOS 7.
 
 [[toc]]
 

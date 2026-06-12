@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { isExternal, isMailto, isTel, isPterodactylIo, ensureExt } from './util';
+import { isExternal, isMailto, isTel, isShadowdactylIo, ensureExt } from './util';
 
 export default {
     props: {
@@ -46,12 +46,12 @@ export default {
         isExternal,
         isMailto,
         isTel,
-        isPterodactylIo,
+        isShadowdactylIo,
 
         shouldOpenNewTab(link) {
             return !this.isMailto(link)
                 && !this.isTel(link)
-                && !this.isPterodactylIo(link);
+                && !this.isShadowdactylIo(link);
         }
     }
 };

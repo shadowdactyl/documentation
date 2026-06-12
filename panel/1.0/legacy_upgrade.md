@@ -5,7 +5,7 @@ of Panel unavailability, however none of the underlying game server instances wi
 
 ## Enter Maintenance Mode
 You'll want to put your Panel into maintenance mode by running the `down` command below before starting. This
-will prevent users from accessing the Panel during a period where things will be broken or not working correctly. Make sure that you're in the `/var/www/pterodactyl` directory when executing the command.
+will prevent users from accessing the Panel during a period where things will be broken or not working correctly. Make sure that you're in the `/var/www/shadowdactyl` directory when executing the command.
 
 ``` bash
 # Put the Panel into maintenance mode and deny user access
@@ -23,7 +23,7 @@ reference the list below to ensure you have all of the required versions.
 
 ::: warning Nginx
 If you upgrade your PHP version and are using nginx as your webserver, you will have to update the
-`fastcgi_pass` value in your nginx's `pterodactyl.conf` configuration to use the correct `php-fpm` socket.
+`fastcgi_pass` value in your nginx's `shadowdactyl.conf` configuration to use the correct `php-fpm` socket.
 :::
 
 * MySQL `5.7.22` or higher (MySQL `8` recommended) **or** MariaDB `10.2` or higher.
@@ -33,13 +33,13 @@ Please make sure you are running the correct version of MariaDB or MySQL listed 
 result in an error when you attempt to run the migrations.
 
 Previous documentation (and just the age of this software) likely had you installing MariaDB 10.1 which _will not
-work_ with this version of Pterodactyl.
+work_ with this version of Shadowdactyl.
 :::
 
 ## Fetch Updated Files
 The first step in the update process is to download the new panel files from GitHub. The command below will download
-the release archive for the most recent version of Pterodactyl and save it in the current directory. Now is a good time
-to ensure that you're in the `/var/www/pterodactyl` directory as the command below will automatically unpack the archive
+the release archive for the most recent version of Shadowdactyl and save it in the current directory. Now is a good time
+to ensure that you're in the `/var/www/shadowdactyl` directory as the command below will automatically unpack the archive
 into your current folder.
 
 We will also be deleting the `app/` directory. Because of the way we handle installations and upgrades deleted files
@@ -48,7 +48,7 @@ are not always detected properly, so simply uppacking over this location will re
 ``` bash
 # Delete the app directory to ensure we start with a clean slate here. This will not affect any
 # of your settings or servers.
-curl -L -o panel.tar.gz https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz
+curl -L -o panel.tar.gz https://github.com/shadowdactyl/panel/releases/latest/download/panel.tar.gz
 rm -rf $(find app public resources -depth | head -n -1 | grep -Fv "$(tar -tf panel.tar.gz)")
 
 # Download the updated files and delete the archive file.
@@ -80,7 +80,7 @@ php artisan config:clear
 ```
 
 ## Database Updates
-You'll also need to update your database schema for the newest version of Pterodactyl. Running the two commands below
+You'll also need to update your database schema for the newest version of Shadowdactyl. Running the two commands below
 will update the schema and ensure the default eggs we ship are up to date (and add any new ones we might have). Just
 remember, _never edit core eggs we ship_! They will be overwritten by this update process.
 
@@ -125,9 +125,9 @@ php artisan up
 ```
 
 ## Switch to Wings
-We've deprecated the old Node.js daemon in favor of [Wings](https://github.com/pterodactyl/wings), our new server
+We've deprecated the old Node.js daemon in favor of [Wings](https://github.com/shadowdactyl/wings), our new server
 control plane written in Go. This new system is significantly faster, easier to install, and much smaller. All you
 need to do is install a single binary on your system and configure it to run on boot. **You cannot use the old Node.js
-Daemon to run servers with Pterodactyl Panel 1.0.**
+Daemon to run servers with Shadowdactyl Panel 1.0.**
 
 Please see [Migrating to Wings](/wings/1.0/migrating.md) for instructions.

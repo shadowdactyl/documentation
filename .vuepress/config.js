@@ -1,7 +1,7 @@
 module.exports = {
     base: '/',
-    title: 'Pterodactyl',
-    description: 'Pterodactyl is an open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.',
+    title: 'Shadowdactyl',
+    description: 'Shadowdactyl is an open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Shadowdactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.',
     plugins: [
         ['@vuepress/search', {
             searchMaxSuggestions: 10
@@ -35,8 +35,8 @@ module.exports = {
         ['meta', { name: 'theme-color', content: '#0e4688' }],
     ],
     themeConfig: {
-        repo: 'pterodactyl/panel',
-        docsRepo: 'pterodactyl/documentation',
+        repo: 'shadowdactyl/panel',
+        docsRepo: 'shadowdactyl/documentation',
         repoLabel: 'GitHub',
         editLinkText: 'Help us improve this page.',
         editLinks: true,
@@ -44,7 +44,7 @@ module.exports = {
         nav: [
             {
                 text: 'Eggs',
-                link: 'https://eggs.pterodactyl.io/',
+                link: 'https://eggs.shadowdactyl.io/',
             },
             {
                 text: 'Documentation',
@@ -56,11 +56,11 @@ module.exports = {
             },
             {
                 text: 'Get Help',
-                link: 'https://discord.gg/pterodactyl'
+                link: 'https://discord.gg/shadowdactyl'
             },
             {
                 text: 'API',
-                link: 'https://dashflo.net/docs/api/pterodactyl/v1/'
+                link: 'https://dashflo.net/docs/api/shadowdactyl/v1/'
             }
         ],
         sidebar: {
